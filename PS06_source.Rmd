@@ -37,7 +37,10 @@ library(readr)
 The following code uses the function `read_csv()` to read in the data and store the information in an object named `hate_crimes`.
 
 ```{r}
-hate_crimes <- read_csv("http://bit.ly/2ItxYg3")
+url <- "http://bit.ly/2ItxYg3"
+if(!file.exists("./hate_crimes.csv")){
+    download.file(url, destfile = "./hate_crimes.csv")}
+hate_crimes <- read_csv("./hate_crimes.csv")
 ```
 
 Next, let's explore the `hate_crimes` data set using the `glimpse()` function from the `dplyr` package:
@@ -301,7 +304,10 @@ Wildlife biologists are interested in managing/protecting habitats for a declini
 The data are read into the object `vole_trapping` using the `read_csv()` function below.
 
 ```{r}
-vole_trapping <- read_csv("http://bit.ly/2IgDF0E")
+url <- "http://bit.ly/2IgDF0E"
+if(!file.exists("./vole_trapping.csv")){
+    download.file(url, destfile = "./vole_trapping.csv")}
+vole_trapping <- read_csv("./vole_trapping.csv")
 ```
 
 The data contains the variables: 
