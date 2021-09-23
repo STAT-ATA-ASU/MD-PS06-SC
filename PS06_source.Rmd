@@ -2,7 +2,7 @@
 ---
 title: "Problem Set 06"
 author: "Your Name Goes Here"
-date: 'Last compiled: `r format(Sys.time(), "%B %d, %Y")`'
+date: 'Last compiled: `r format(Sys.time(), "%B %d, %Y at %X")`'
 output:
   bookdown::html_document2:
     theme: lumen
@@ -38,9 +38,11 @@ The following code uses the function `read_csv()` to read in the data and store 
 
 ```{r}
 url <- "http://bit.ly/2ItxYg3"
-if(!file.exists("./hate_crimes.csv")){
-    download.file(url, destfile = "./hate_crimes.csv")}
-hate_crimes <- read_csv("./hate_crimes.csv")
+if(!dir.exists("./data/"))
+{dir.create("./data/")}
+if(!file.exists("./data/hate_crimes.csv")){
+    download.file(url, destfile = "./data/hate_crimes.csv")}
+hate_crimes <- read_csv("./data/hate_crimes.csv")
 ```
 
 Next, let's explore the `hate_crimes` data set using the `glimpse()` function from the `dplyr` package:
@@ -82,14 +84,14 @@ We will start by creating a scatterplot showing:
 * A line of best fit (regression line) for each level of the variable `urbanization` (one for "low", one for "high")
 
 
-```{r, label = "urb", fig.cap = "Education and income in states with differing levels of urbanization"}
+```{r, label = "urb", fig.cap = "Median household income versus percent of adults with high-school degree in states with differing levels of urbanization"}
 ggplot(data = hate_crimes, aes(y = income, x = hs, color = urbanization)) +
   geom_point()+ 
   geom_smooth(method = "lm", se = FALSE) + 
   labs(
     x = "Percent of adults with high-school degree", 
     y = "Median household income in USD $", 
-    title = "Education and income in states with differing levels of urbanization") + 
+    title = "Income versus education in states with differing levels of urbanization") + 
   theme_bw()
 ```
 
@@ -147,18 +149,27 @@ Type your complete sentence answer here using inline R code and delete this comm
 ***
 
 
-6.  Run a linear regression model that examines the relationship between household `income` (as response variable), and high-school education, and `urbanization` as explanatory variables.  Store the results of your model in an object named `med_income_model`.  Generate the regression table using the `get_regression_table()` function from the `moderndive` package. 
+6.  Run a linear regression model that examines the relationship between household `income` (as response variable), and high-school education, and `urbanization` as explanatory variables.  Store the results of your model in an object named `med_income_model`.  Generate the regression table using the `get_regression_table()` function from the `moderndive` package. Graph the model stored in `med_income_model`.
 
 ```{r}
+library(scales)  # Used to format numbers and for dollars
+# Type your code and comments inside the code chunk
+med_income_model <- lm(income ~ hs + urbanization, data = hate_crimes)
+
+
+```
+
+```{r, label="PS", fig.cap = "Income versus education levels"}
 # Type your code and comments inside the code chunk
 
 ```
+
 
 ***
 
 
 
-7.  Is the intercept the same for the states with a "low" and "high" level of urbanization? Is the slope the same? (look at the data visualization in Figure \@ref(fig:urb) to help with this!) 
+7.  Is the intercept the same for the states with a "low" and "high" level of urbanization? Is the slope the same? (look at the data visualization created in Problem 6 to help with this!) 
 
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
@@ -173,7 +184,13 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
- 
+```{r}
+# Type your code and comments inside the code chunk
+
+```
+
+
+
 </div>
 
 
@@ -210,7 +227,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 
 \begin{equation}
-\widehat{income} = -113725 + 1986 \times \text{hs}  + -7333 \times 1_{\mbox{low urbanization}}(x)
+\widehat{income} = `r dollar(coef(summary(med_income_model))[1])` + `r dollar(coef(summary(med_income_model))[2])` \times \text{hs}  `r dollar(coef(summary(med_income_model))[3])` \times 1_{\mbox{low urbanization}}(x)
 (\#eq:mim)
 \end{equation}
 
@@ -266,7 +283,6 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 
 
-
 </div> 
 
 ***
@@ -287,6 +303,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 *
 *
 *
+
 </div> 
 
 
@@ -305,9 +322,11 @@ The data are read into the object `vole_trapping` using the `read_csv()` functio
 
 ```{r}
 url <- "http://bit.ly/2IgDF0E"
-if(!file.exists("./vole_trapping.csv")){
-    download.file(url, destfile = "./vole_trapping.csv")}
-vole_trapping <- read_csv("./vole_trapping.csv")
+if(!dir.exists("./data/"))
+{dir.create("./data/")}
+if(!file.exists("./data/vole_trapping.csv")){
+    download.file(url, destfile = "./data/vole_trapping.csv")}
+vole_trapping <- read_csv("./data/vole_trapping.csv")
 ```
 
 The data contains the variables: 
@@ -345,6 +364,10 @@ Type your complete sentence answer here using inline R code and delete this comm
 Type your complete sentence answer here using inline R code and delete this comment.
 
 
+```{r}
+# Type your code and comments inside the code chunk
+
+```
 
 </div>
 
@@ -355,6 +378,11 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
+
+```{r}
+# Type your code and comments inside the code chunk
+
+```
 
 
 
