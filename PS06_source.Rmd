@@ -311,8 +311,11 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 # Independent Analysis 
 
-![](https://ptes.org/wp-content/uploads/2017/11/water-vole-credit-Iain-Green-www.wildwonder.co_.uk-2_cropped.jpg){width=50%}
 
+```{r, label = "VOLE", echo = FALSE, out.width=600, fig.cap = "Vole in the wild"}
+knitr::include_graphics("https://ptes.org/wp-content/uploads/2017/11/water-vole-credit-Iain-Green-www.wildwonder.co_.uk-2_cropped.jpg")
+
+```
 
 You will now use the tools you have learned, and a new data set to solve a conservation problem.  
 
