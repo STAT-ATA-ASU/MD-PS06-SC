@@ -103,7 +103,7 @@ ggplot(data = hate_crimes, aes(y = income, x = hs, color = urbanization)) +
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
-
++ 
 </div> 
 
 
@@ -112,6 +112,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
++
 
 </div>
 
@@ -123,6 +124,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
++ 
 
 </div>
 
@@ -132,6 +134,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
++ 
 
 </div>
 
@@ -174,6 +177,7 @@ med_income_model <- lm(income ~ hs + urbanization, data = hate_crimes)
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
++ 
 
 </div>
 
@@ -189,7 +193,9 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 ```
 
++ 
 
++ 
 
 </div>
 
@@ -199,6 +205,9 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
++   
+
++
 
 </div>
 
@@ -208,6 +217,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
++
 
 </div>
 
@@ -217,6 +227,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
++
 
 </div>
 
@@ -252,6 +263,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
++
 
 </div>
 
@@ -269,6 +281,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
++
 
 </div>
 
@@ -281,7 +294,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
-
++   
 
 </div> 
 
@@ -325,10 +338,12 @@ The data are read into the object `vole_trapping` using the `read_csv()` functio
 
 ```{r}
 url <- "http://bit.ly/2IgDF0E"
-if(!dir.exists("./data/"))
-{dir.create("./data/")}
+if(!dir.exists("./data/")){
+  dir.create("./data/")
+  }
 if(!file.exists("./data/vole_trapping.csv")){
-    download.file(url, destfile = "./data/vole_trapping.csv")}
+    download.file(url, destfile = "./data/vole_trapping.csv")
+  }
 vole_trapping <- read_csv("./data/vole_trapping.csv")
 ```
 
@@ -356,6 +371,7 @@ Generate a regression model with `voles` as the response variable `y` and `veg` 
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
++   
 
 </div>
 
@@ -372,6 +388,8 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 ```
 
++
+
 </div>
 
 ***
@@ -387,7 +405,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 ```
 
-
++
 
 </div>
 
