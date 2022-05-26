@@ -1640,7 +1640,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Problem Set 06</h1>
 <h4 class="author">Your Name Goes Here</h4>
-<h4 class="date">Last compiled: May 20, 2022 at 10:39:51 AM</h4>
+<h4 class="date">Last compiled: May 26, 2022 at 08:09:00 AM</h4>
 
 </div>
 
@@ -1730,6 +1730,7 @@ Figure 2.1: Median household income versus percent of adults with high-school de
 <li></li>
 </ul>
 </div>
+<hr />
 <ol start="2" style="list-style-type: decimal">
 <li>Which regression line (high <code>urbanization</code> or low <code>urbanization</code>) appears to have the larger intercept?</li>
 </ol>
@@ -1749,6 +1750,7 @@ Figure 2.1: Median household income versus percent of adults with high-school de
 <li></li>
 </ul>
 </div>
+<hr />
 <ol start="4" style="list-style-type: decimal">
 <li>Based on the data visualization in Figure <a href="#fig:urb">2.1</a>, and your answer to 3, do you think it would be best to run a “parallel slopes” model (i.e. a model that estimates one shared slope for the two levels of urbanization), or a more complex “interaction model” (i.e. a model that estimates a separate slope for the two levels of urbanization)?</li>
 </ol>
@@ -1781,6 +1783,7 @@ med_income_model &lt;- lm(income ~ hs + urbanization, data = hate_crimes)</code>
 <li></li>
 </ul>
 </div>
+<hr />
 <ol start="8" style="list-style-type: decimal">
 <li>What is the slope for the regression line of the states with a “high” level of urbanization? What is the intercept?</li>
 </ol>
@@ -1792,6 +1795,7 @@ med_income_model &lt;- lm(income ~ hs + urbanization, data = hate_crimes)</code>
 <li></li>
 </ul>
 </div>
+<hr />
 <ol start="9" style="list-style-type: decimal">
 <li>What is the slope for the regression line of the states with a “low” level of urbanization? What is the intercept?</li>
 </ol>
@@ -1802,6 +1806,7 @@ med_income_model &lt;- lm(income ~ hs + urbanization, data = hate_crimes)</code>
 <li></li>
 </ul>
 </div>
+<hr />
 <ol start="10" style="list-style-type: decimal">
 <li>Based on your regression table output (and the data visualizations), is median household income greater in states that have lower or higher levels of urbanization? By how much?</li>
 </ol>
@@ -1811,6 +1816,7 @@ med_income_model &lt;- lm(income ~ hs + urbanization, data = hate_crimes)</code>
 <li></li>
 </ul>
 </div>
+<hr />
 <ol start="11" style="list-style-type: decimal">
 <li>For every increase in 1 percentage point of high-school educated adults, what is the associated increase in the median household income of a state?</li>
 </ol>
@@ -1905,10 +1911,13 @@ vole_trapping &lt;- read_csv(&quot;./data/vole_trapping.csv&quot;)</code></pre>
 <li><code>veg</code> for the percent cover of vegetation at each site</li>
 <li><code>soil</code> identifying a site as “moist” or “dry”</li>
 </ul>
-<p>Generate a regression model with <code>voles</code> as the response variable <code>y</code> and <code>veg</code> and <code>soil</code> as explanatory variables. Store the model in an object named <code>voles_mod</code>. Use the results of the model to answer the following questions <strong>based on the available data</strong>. Create a data visualization (parallel slopes) to help answer the questions.</p>
-<pre class="r"><code># Type your code and comments inside the code chunk</code></pre>
 <hr />
 <ol start="17" style="list-style-type: decimal">
+<li>Generate a regression model with <code>voles</code> as the response variable <code>y</code> and <code>veg</code> and <code>soil</code> as explanatory variables. Store the model in an object named <code>voles_mod</code>. Use the results of the model to answer the following questions <strong>based on the available data</strong>. Create a data visualization (parallel slopes) to help answer the questions.</li>
+</ol>
+<pre class="r"><code># Type your code and comments inside the code chunk</code></pre>
+<hr />
+<ol start="18" style="list-style-type: decimal">
 <li>Would you recommend to a manager that they try to protect sites with high or low vegetation cover? Why?</li>
 </ol>
 <div id="answer">
@@ -1918,7 +1927,7 @@ vole_trapping &lt;- read_csv(&quot;./data/vole_trapping.csv&quot;)</code></pre>
 </ul>
 </div>
 <hr />
-<ol start="18" style="list-style-type: decimal">
+<ol start="19" style="list-style-type: decimal">
 <li>Dry sites are typically a lot less money to purchase and maintain for conservation organizations. Thus, if a conservation organization decides to purchase a few dry sites, roughly what percent cover of vegetation do they need to maintain on these sites (at a minimum) to support a population of about 30 voles at the site?</li>
 </ol>
 <div id="answer">
@@ -1929,7 +1938,7 @@ vole_trapping &lt;- read_csv(&quot;./data/vole_trapping.csv&quot;)</code></pre>
 </ul>
 </div>
 <hr />
-<ol start="19" style="list-style-type: decimal">
+<ol start="20" style="list-style-type: decimal">
 <li>The Nature Conservancy is looking at purchasing a site for this species (in the same study area) that has moist soil and 40% vegetation cover. <strong>Using the regression equation</strong> what would you predict as the possible vole population the site might be able to support?</li>
 </ol>
 <div id="answer">
