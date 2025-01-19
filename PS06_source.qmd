@@ -84,13 +84,15 @@ We will start by creating a scatterplot showing:
 ```{r}
 #| label: fig-urb
 #| fig-cap: "Median household income versus percent of adults with high-school degree in states with differing levels of urbanization"
-ggplot(data = hate_crimes, aes(y = income, x = hs, color = urbanization)) +
+ggplot(data = hate_crimes, 
+       aes(y = income, x = hs, color = urbanization)) +
   geom_point()+ 
   geom_smooth(method = "lm", se = FALSE) + 
   labs(
     x = "Percent of adults with high-school degree", 
     y = "Median household income in USD $", 
-    title = "Income versus education in states with differing levels of urbanization") + 
+    title = "Income versus education in states with 
+    differing levels of urbanization") + 
   theme_bw() + 
   theme(plot.title = element_text(hjust = 0.5))
 ```
